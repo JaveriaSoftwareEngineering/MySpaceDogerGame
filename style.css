@@ -1,3 +1,4 @@
+/* Existing styles remain exactly as you have them */
 body {
     background-color: #0b0c10;
     font-family: 'Courier New', Courier, monospace;
@@ -78,4 +79,69 @@ canvas {
     background: #66fcf1;
     color: #0b0c10;
     box-shadow: 0 0 20px #66fcf1;
+}
+
+/* ==========================================================================
+   NEW: MOBILE RESPONSIVE AND ON-SCREEN CONTROLS CONFIGURATION
+   ========================================================================== */
+
+/* Hide mobile layout on desktops */
+#mobile-controls {
+    display: none;
+}
+
+/* Screen constraints matching phone breakpoints */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 10px;
+        overflow: auto;
+    }
+
+    /* Scaling the canvas frame to fit mobile viewport widths */
+    canvas {
+        width: 95vw;
+        height: auto;
+        max-width: 400px;
+    }
+
+    /* Ensure UI elements align identically on top of the scaled canvas */
+    #ui-overlay {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Present touch panel layout underneath game window */
+    #mobile-controls {
+        display: flex;
+        justify-content: space-between;
+        width: 95vw;
+        max-width: 400px;
+        margin-top: 15px;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    #mobile-controls button {
+        background: rgba(31, 40, 51, 0.8);
+        border: 2px solid #66fcf1;
+        color: #66fcf1;
+        font-size: 24px;
+        padding: 15px 0;
+        border-radius: 8px;
+        cursor: pointer;
+        outline: none;
+        user-select: none; /* Prevents text highlighting highlights on rapid taps */
+        -webkit-user-select: none;
+    }
+
+    #btn-left, #btn-right {
+        width: 25%;
+    }
+
+    #btn-shoot {
+        width: 45%;
+        background: rgba(69, 243, 255, 0.2);
+    }
 }
