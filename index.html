@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Dodger Arcade Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Live UI Score Board -->
+        <div id="score-board">Score: <span id="score-val">0</span></div>
+        
+        <!-- Main Graphic Canvas -->
+        <canvas id="gameCanvas" width="400" height="500"></canvas>
+        
+        <!-- Interactive UI Start/Game Over Overlay -->
+        <div id="ui-overlay">
+            <h1 id="ui-title">SPACE DODGER</h1>
+            <p id="ui-subtitle">A/D or Arrows to Move. SPACEBAR to Shoot!</p>
+            <button id="start-btn">PLAY GAME</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
